@@ -39,6 +39,9 @@ Este proyecto es una extensión del gestor de usuarios creado en la primera pre-
 
 2. Navega al directorio del proyecto
 
+    ```bash
+    cd tu-repositorio
+
 Asegúrate de tener Python 3.10 o superior instalado en tu sistema.
 
 3. Ejecuta el programa:
