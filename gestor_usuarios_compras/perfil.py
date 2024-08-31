@@ -1,5 +1,5 @@
-from gestor_de_usuarios.utils import solicitar_entrada, mostrar_mensaje_y_pausar, hash_password
-from gestor_de_usuarios.usuarios import usuarios_registrados, verificar_usuario_existe
+from gestor_usuarios_compras.utils import solicitar_entrada, mostrar_mensaje_y_pausar, hash_password
+from gestor_usuarios_compras.usuarios import usuarios_registrados, verificar_usuario_existe
 
 def personalizar_perfil():
     print("\n### PERSONALIZAR PERFIL ###\n")

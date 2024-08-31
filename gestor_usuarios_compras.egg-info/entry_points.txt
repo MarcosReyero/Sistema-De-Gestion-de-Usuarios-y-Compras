@@ -1,0 +1,2 @@
+[console_scripts]
+gestor-usuarios-compras = gestor_de_usuarios.main:main

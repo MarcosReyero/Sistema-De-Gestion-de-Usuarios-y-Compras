@@ -45,34 +45,41 @@ Este proyecto es una extensión del gestor de usuarios creado en la primera pre-
 Asegúrate de tener Python 3.10 o superior instalado en tu sistema.
 
 3. Ejecuta el programa:
-
-python main.py
+    ```bash
+    python main.py
 
 ## Uso
 
 Al iniciar el programa, se presenta un menú principal donde los usuarios pueden:
 
-Iniciar sesión o registrarse.
-Personalizar su perfil.
-Comprar productos y gestionar el carrito de compras.
-Cerrar sesión o salir del programa.
-Durante la ejecución, puedes navegar por el menú y realizar las diferentes acciones disponibles.
+- Iniciar sesión o registrarse.
 
-Contribuciones
+- Personalizar su perfil.
+
+- Comprar productos y gestionar el carrito de compras.
+
+- Cerrar sesión o salir del programa.
+- Durante la ejecución, puedes navegar por el menú y realizar las diferentes acciones disponibles.
+
+# Contribuciones
 Las contribuciones son bienvenidas. Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
-### . Haz un fork del repositorio.
+1. Haz un fork del repositorio.
 
-### . Crea una nueva rama para tu característica o corrección:
+1. Crea una nueva rama para tu característica o corrección:
 
-## git checkout -b mi-nueva-caracteristica
-Realiza tus cambios y haz un commit:
+   ```bash
+   git checkout -b mi-nueva-caracteristica
 
 
-git add .
-git commit -m "Añadida nueva característica"
-Sube tus cambios:
+### Realiza tus cambios y haz un commit:
 
+    ```bash
+    git add .
+    git commit -m "Añadida nueva característica"
+
+    
+### Sube tus cambios:
 
 git push origin mi-nueva-caracteristica
 Crea un Pull Request en GitHub.

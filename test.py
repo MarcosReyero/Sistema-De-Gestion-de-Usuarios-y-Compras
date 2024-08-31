@@ -17,7 +17,8 @@ def solicitar_entrada(mensaje, min_longitud, max_longitud):
         if len(valor) < min_longitud or len(valor) > max_longitud:
             mostrar_mensaje_y_pausar(f"Debe tener entre {min_longitud} y {max_longitud} caracteres.")
         else: return valor
-
+apellido = "teo"
+print("mi ap es" ,apellido)
 def verificar_usuario_existe(usuario):
     return any(usuario == u["usuario"] for u in usuarios_registrados)
 

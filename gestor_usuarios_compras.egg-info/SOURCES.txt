@@ -1,0 +1,14 @@
+README.md
+setup.py
+gestor_usuarios_compras/__init__.py
+gestor_usuarios_compras/autenticacion.py
+gestor_usuarios_compras/perfil.py
+gestor_usuarios_compras/personas.py
+gestor_usuarios_compras/usuarios.py
+gestor_usuarios_compras/utils.py
+gestor_usuarios_compras/ventas.py
+gestor_usuarios_compras.egg-info/PKG-INFO
+gestor_usuarios_compras.egg-info/SOURCES.txt
+gestor_usuarios_compras.egg-info/dependency_links.txt
+gestor_usuarios_compras.egg-info/entry_points.txt
+gestor_usuarios_compras.egg-info/top_level.txt

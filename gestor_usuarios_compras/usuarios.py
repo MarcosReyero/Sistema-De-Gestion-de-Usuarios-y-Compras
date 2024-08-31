@@ -1,4 +1,4 @@
-from gestor_de_usuarios.utils import hash_password
+from gestor_usuarios_compras.utils import hash_password
 
 usuarios_registrados = []
 

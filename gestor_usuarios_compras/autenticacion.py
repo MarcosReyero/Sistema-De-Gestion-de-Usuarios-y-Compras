@@ -1,5 +1,5 @@
-from gestor_de_usuarios.utils import mostrar_mensaje_y_pausar, hash_password, solicitar_entrada
-from gestor_de_usuarios.usuarios import usuarios_registrados, verificar_usuario_existe, agregar_usuario
+from gestor_usuarios_compras.utils import mostrar_mensaje_y_pausar, hash_password, solicitar_entrada
+from gestor_usuarios_compras.usuarios import usuarios_registrados, verificar_usuario_existe, agregar_usuario
 
 def iniciar_sesion():
     print("\n### INICIAR SESIÓN ###\n")
