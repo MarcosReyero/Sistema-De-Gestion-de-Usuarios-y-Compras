@@ -1,5 +1,5 @@
-from gestor_usuarios_compras.utils import solicitar_entrada, mostrar_mensaje_y_pausar, hash_password
-from gestor_usuarios_compras.usuarios import usuarios_registrados, verificar_usuario_existe
+from gestor_usuarios_compras.utils import solicitar_entrada, mostrar_mensaje_y_pausar, hash_password, escribir_datos, verify_password
+from gestor_usuarios_compras.usuarios import cargar_usuarios, verificar_usuario_existe
 
 def personalizar_perfil():
     print("\n### PERSONALIZAR PERFIL ###\n")
@@ -10,12 +10,19 @@ def personalizar_perfil():
         mostrar_mensaje_y_pausar("\nUsuario o contraseña no pueden estar vacíos.")
         return
 
-    password_hashed = hash_password(password_actual)
-    usuario_valido = False
+    datos = cargar_usuarios()  
+    usuarios = datos.get("usuarios", []) 
 
-    for dict_usuario in usuarios_registrados:
-        if usuario_actual == dict_usuario["usuario"] and password_hashed == dict_usuario["password"]:
+    usuario_valido = False
+    usuario_a_actualizar = None
+
+    for dict_usuario in usuarios:
+       
+        stored_hash = dict_usuario["password"]
+        stored_salt = dict_usuario["salt"]
+        if usuario_actual == dict_usuario["usuario"] and verify_password(password_actual, stored_hash, stored_salt):
             usuario_valido = True
+            usuario_a_actualizar = dict_usuario
             break
 
     if not usuario_valido:
@@ -29,11 +36,20 @@ def personalizar_perfil():
         return
 
     nuevo_password = solicitar_entrada("Nueva contraseña: ", 8, 20)
-    nuevo_password_hashed = hash_password(nuevo_password)
-    for dict_usuario in usuarios_registrados:
-        if usuario_actual == dict_usuario["usuario"]:
-            dict_usuario["usuario"] = nuevo_usuario
-            dict_usuario["password"] = nuevo_password_hashed
-            break
+    nuevo_password_hashed, nuevo_salt = hash_password(nuevo_password)
+    
+    if usuario_a_actualizar:
+        usuario_a_actualizar["usuario"] = nuevo_usuario
+        
+        if isinstance(nuevo_password_hashed, bytes):
+            usuario_a_actualizar["password"] = nuevo_password_hashed.hex()
+        else:
+            usuario_a_actualizar["password"] = nuevo_password_hashed
+        
+        usuario_a_actualizar["salt"] = nuevo_salt.hex()
+
+        usuarios = [u for u in usuarios if u["usuario"] != usuario_actual]
+        usuarios.append(usuario_a_actualizar)
+        escribir_datos("gestor_usuarios_compras/data/usuarios.json", {"usuarios": usuarios})
 
     mostrar_mensaje_y_pausar("\nPerfil actualizado exitosamente.")
