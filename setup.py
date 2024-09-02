@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gestor_usuarios_compras",
-    version="0.1.0",
+    version="0.1.1",
     author="Marcos Reyero",
     author_email="reyeromateo@gmail.com",
     description="Sistema de Gestión de Usuarios y Compras en Línea",
