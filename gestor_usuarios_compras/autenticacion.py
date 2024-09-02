@@ -1,23 +1,36 @@
-from gestor_usuarios_compras.utils import mostrar_mensaje_y_pausar, hash_password, solicitar_entrada
-from gestor_usuarios_compras.usuarios import usuarios_registrados, verificar_usuario_existe, agregar_usuario
+from gestor_usuarios_compras.utils import (
+    mostrar_mensaje_y_pausar, 
+    hash_password, 
+    solicitar_entrada, 
+    verify_password,
+    escribir_datos,
+)
+from .config import USER_DATA_FILE
+from .usuarios import cargar_usuarios, verificar_usuario_existe
+
 
 def iniciar_sesion():
-    print("\n### INICIAR SESIÓN ###\n")
+    """Permite a un usuario iniciar sesión proporcionando nombre de usuario y contraseña."""
+    print("\n### INICIAR SESIÓN ###")
     usuario = solicitar_entrada("Usuario: ", 3, 20)
-    password = solicitar_entrada("Contraseña: ", 8, 20)
-
-    if not usuario or not password:
-        mostrar_mensaje_y_pausar("\nUsuario o contraseña no pueden estar vacíos.")
+    contraseña = solicitar_entrada("Contraseña: ", 8, 20)
+    
+    usuarios_registrados = cargar_usuarios()
+    
+    if "usuarios" not in usuarios_registrados:
+        mostrar_mensaje_y_pausar("No se encontraron usuarios registrados.")
         return False
-
-    password_hashed = hash_password(password)
-
-    for dict_usuario in usuarios_registrados:
-        if usuario == dict_usuario["usuario"] and password_hashed == dict_usuario["password"]:
-            mostrar_mensaje_y_pausar("\n¡Has iniciado sesión con éxito!")
-            return True
-
-    mostrar_mensaje_y_pausar("\nUsuario o contraseña incorrectos.")
+    
+    for u in usuarios_registrados["usuarios"]:
+        if isinstance(u, dict) and u.get("usuario") == usuario:
+            if verify_password(contraseña, u.get("password"), u.get("salt")):
+                mostrar_mensaje_y_pausar("Inicio de sesión exitoso.")
+                return True
+            else:
+                mostrar_mensaje_y_pausar("Contraseña incorrecta.")
+                return False
+    
+    mostrar_mensaje_y_pausar("Usuario no encontrado.")
     return False
 
 def registrar_usuario():
@@ -30,7 +43,29 @@ def registrar_usuario():
         return
 
     password = solicitar_entrada("Contraseña: ", 8, 20)
-    agregar_usuario(usuario, password)
+    hashed, salt = hash_password(password)
+    
+    # Cargar usuarios desde el archivo
+    usuarios_registrados = cargar_usuarios()
+    
+    if "usuarios" not in usuarios_registrados:
+        usuarios_registrados["usuarios"] = []
+        
+    nuevo_usuario = {
+        "usuario": usuario,
+        "password": hashed.hex(),
+        "salt": salt.hex()
+    }
+    
+    # Depuración: Imprimir el contenido antes de guardar
+    # print(f"Usuarios Registrados: {usuarios_registrados}")
+    # print(f"Nuevo Usuario: {nuevo_usuario}")
+    
+    usuarios_registrados["usuarios"].append(nuevo_usuario)
+    
+    # Guardar usuarios en el archivo JSON
+    escribir_datos(USER_DATA_FILE, usuarios_registrados)
+
     mostrar_mensaje_y_pausar("\nTe has registrado exitosamente.")
 
 def mostrar_requisitos():
