@@ -6,13 +6,13 @@ Este proyecto es una extensión del gestor de usuarios creado en la primera pre-
 
 ## Funcionalidades
 
-### Gestión de Usuarios
+#### Gestión de Usuarios
 
 - Registro de nuevos usuarios con validación de longitud para nombre de usuario y contraseña.
 - Inicio de sesión y autenticación con hash de contraseñas.
 - Personalización del perfil de usuario, incluyendo cambio de nombre de usuario y contraseña.
 
-### Sistema de Compras
+#### Sistema de Compras
 
 - Visualización de productos disponibles.
 - Compra de productos y gestión del carrito de compras.
@@ -20,15 +20,18 @@ Este proyecto es una extensión del gestor de usuarios creado en la primera pre-
 
 ## Estructura del Proyecto
 
-- `gestor_de_usuarios/`
+- `gestor_usuarios_compras/`
 
   - `__init__.py` - Inicialización del módulo.
   
   - `utils.py` - Funciones utilitarias como manejo de entrada del usuario y limpieza de pantalla.
   - `autenticacion.py` - Funciones relacionadas con la autenticación de usuarios.
   - `perfil.py` - Funciones para la personalización del perfil de usuario.
+  - `personas.py` - Funciones para gestionar información de personas.
+  - `usuarios.py` - Funciones para manejar la gestión de usuarios.
   - `ventas.py` - Funciones para manejar productos y el carrito de compras.
-- `main.py` - Archivo principal que ejecuta el sistema, mostrando menús y manejando la lógica de flujo.
+  
+  - `main.py` - Archivo principal que ejecuta el sistema, mostrando menús y manejando la lógica de flujo.
 
 ## Instalación
 
@@ -70,7 +73,6 @@ Las contribuciones son bienvenidas. Si deseas contribuir al proyecto, por favor 
 
    ```bash
    git checkout -b mi-nueva-caracteristica
-
 
 ### Realiza tus cambios y haz un commit:
 

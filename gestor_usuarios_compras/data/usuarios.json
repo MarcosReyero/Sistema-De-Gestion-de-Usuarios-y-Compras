@@ -1,0 +1,39 @@
+{
+    "usuarios": [
+        {
+            "usuario": "teo",
+            "password": "e280806afb75e53db0bdc2dfc89fe7ad60a5ce9059a9b7f141aeea11d3d2a82f",
+            "salt": "99433d45d8d021caf432489748dfc5c3"
+        },
+        {
+            "usuario": "abi",
+            "password": "8ca67456a403d00eb17afe6ae5d970eb7517d972e0c2ea79e7cf72006fd658ca",
+            "salt": "23b71b315236546903fd860280a1c063"
+        },
+        {
+            "usuario": "teo8",
+            "password": "f1f0275d002ed35aea1cc2cc423633676a6f666c7016615b1f8d0140a9f22424",
+            "salt": "e98f021d7bac6a84dc60357a9e17dcad"
+        },
+        {
+            "usuario": "teo2",
+            "password": "75a4d8770cf08f68815209cde2929ad24eaed2cd9e64765be3c8a3a07b46424c",
+            "salt": "1078d3e20b66aa49e277d574f9dad249"
+        },
+        {
+            "usuario": "olol",
+            "password": "df201cf09f143a92871d85e47c896347ad28d54e7ae3063fc2602efd8dbc8315",
+            "salt": "d41971c54d4fc528d9fe2699fda6d432"
+        },
+        {
+            "usuario": "jajas",
+            "password": "333348fa8c4daece039a8eb8b4a5b01f82bbbde789f4b9ac6d3d287905067121",
+            "salt": "fe68a0a995d3c5f850e064e6d966d23e"
+        },
+        {
+            "usuario": "teo8",
+            "password": "f1f0275d002ed35aea1cc2cc423633676a6f666c7016615b1f8d0140a9f22424",
+            "salt": "e98f021d7bac6a84dc60357a9e17dcad"
+        }
+    ]
+}

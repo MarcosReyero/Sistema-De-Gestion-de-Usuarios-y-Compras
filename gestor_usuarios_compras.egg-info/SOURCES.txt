@@ -2,6 +2,7 @@ README.md
 setup.py
 gestor_usuarios_compras/__init__.py
 gestor_usuarios_compras/autenticacion.py
+gestor_usuarios_compras/config.py
 gestor_usuarios_compras/perfil.py
 gestor_usuarios_compras/personas.py
 gestor_usuarios_compras/usuarios.py
