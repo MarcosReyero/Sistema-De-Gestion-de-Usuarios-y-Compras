@@ -38,7 +38,7 @@ Este proyecto es una extensión del gestor de usuarios creado en la primera pre-
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   [git clone https://github.com/MarcosReyero/Sistema-De-Gestion-de-Usuarios-y-Compras.git
 
 2. Navega al directorio del proyecto
 
@@ -88,4 +88,6 @@ Crea un Pull Request en GitHub.
 
 
 Contacto
-Para cualquier pregunta o comentario, puedes contactarme a través de reyeromateo@gmail.com
+Para cualquier pregunta o comentario, puedes contactarme a través de :
+GMAIL : reyeromateo@gmail.com
+LINKEDIN: https://www.linkedin.com/in/marcos-reyero-046075264/
