@@ -89,5 +89,5 @@ Crea un Pull Request en GitHub.
 
 Contacto
 Para cualquier pregunta o comentario, puedes contactarme a través de :
-GMAIL : reyeromateo@gmail.com
-LINKEDIN: https://www.linkedin.com/in/marcos-reyero-046075264/
+### GMAIL : reyeromateo@gmail.com
+### LINKEDIN: https://www.linkedin.com/in/marcos-reyero-046075264/
